@@ -13,8 +13,6 @@ import java.util.List;
 public class FelineTest extends TestCase {
     // Arrange
     Feline feline = new Feline();
-    @Mock
-    Animal animal = new Animal();
 
     @Test
     public void testEatMeat() throws Exception {
