@@ -17,11 +17,12 @@ import static org.junit.Assert.*;
 
 
 @RunWith(Parameterized.class)
-public class LionTest {
+public class LionParametrizedTest {
     private final String sex;
     private final boolean hasMane;
 
-    public LionTest(String sex, boolean hasMane) {
+
+    public LionParametrizedTest(String sex, boolean hasMane) {
         this.sex = sex;
         this.hasMane = hasMane;
     }
@@ -30,7 +31,7 @@ public class LionTest {
     public static Object[][] getSex() {
         return new Object[][]{
                 {"Самец", true},
-                {"Самка", false}
+                {"Самка", false},
         };
     }
 
@@ -38,28 +39,28 @@ public class LionTest {
     Feline feline;
 
     @Test
-    public void getKittens() throws Exception {
+    public void getKittensTest() throws Exception {
         Lion lion = new Lion(sex);
         int result = lion.getKittens();
         assertEquals(1, result);
     }
 
     @Test
-    public void doesHaveMane() throws Exception {
+    public void doesHaveManeTest() throws Exception {
         Lion lion = new Lion(sex);
         boolean result = lion.doesHaveMane();
         Assert.assertEquals(hasMane, result);
-
-
     }
 
 
+
     @Test
-    public void getFood() throws Exception {
+    public void getFoodTest() throws Exception {
         Lion lion = new Lion(sex);
         List<String> expected = List.of("Животные", "Птицы", "Рыба");
         List<String> result = lion.getFood();
         assertEquals(expected, result);
 
     }
+
 }

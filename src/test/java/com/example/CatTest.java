@@ -19,10 +19,10 @@ import static org.junit.Assert.assertEquals;
 public class CatTest extends TestCase {
     @Mock
     Feline feline;
-    Cat cat = new Cat(feline);
 
     @Test
     public void testGetSound() {
+        Cat cat = new Cat(feline);
         assertEquals("Мяу", cat.getSound());
 
     }
