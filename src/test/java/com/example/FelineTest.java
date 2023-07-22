@@ -44,4 +44,5 @@ public class FelineTest extends TestCase {
         assertEquals(expected, result);
 
     }
+
 }
